@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import MenuApp from './Menu';
+import DisplayDatabases from './displayDatabases';
+import Addbutton from './addDatabaseButton';
+import DisplayBackups from './displayBackups';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <MenuApp className="menuApp"></MenuApp>
       </header>
+      <body>
+        <DisplayDatabases>
+        </DisplayDatabases>
+        <DisplayBackups>
+        </DisplayBackups>
+      </body>
     </div>
   );
 }
