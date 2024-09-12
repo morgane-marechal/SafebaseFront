@@ -12,6 +12,8 @@ function App() {
     setSelectedMenu(selection);
     console.log(selectedMenu)
   };
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -20,10 +22,6 @@ function App() {
       <body>
         {selectedMenu === 'databases' && <DisplayDatabases />}
         {selectedMenu === 'backups' && <DisplayBackups />}
-        {/* <DisplayDatabases>
-        </DisplayDatabases>
-        <DisplayBackups>
-        </DisplayBackups> */}
       </body>
     </div>
   );

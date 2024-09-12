@@ -7,9 +7,6 @@ import ListItemDecorator from '@mui/joy/ListItemDecorator';
 import ListItemButton from '@mui/joy/ListItemButton';
 import './App.css';
 
-
-
-
 export default function DisplayBackups() {
   const [backups, setBackups] = useState([]);
   const [error, setError] = useState(null);
@@ -37,15 +34,6 @@ export default function DisplayBackups() {
   }
     
   return (
-    // <div>
-    //   <h2>Database List</h2>
-    //   <ul>
-    //     {databases.map((db, index) => (
-    //       <li key={index}>{db.name}</li> 
-    //     ))}
-    //   </ul>
-        
-    // </div>
 
     <List className="list">
         <ListItem className="listTitle">

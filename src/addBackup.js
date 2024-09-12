@@ -1,16 +1,10 @@
 import React from 'react';
-import { Button } from '@mui/joy'; // Ou '@mui/material' si vous utilisez Material-UI
+import { Button } from '@mui/joy'; 
 import Add from '@mui/icons-material/Add';
 
 export default function AddBackup() {
   const buttonStyles = {
-    // backgroundColor: '#1976d2',
     color: 'black',
-    // padding: '10px 20px',
-    // borderRadius: '5px',
-    // fontSize: '16px',
-    // display: 'flex',
-    // alignItems: 'center',
     cursor: 'pointer',
   };
 
@@ -25,7 +19,7 @@ export default function AddBackup() {
       startDecorator={<Add />}
       sx={{
         ...buttonStyles,
-        '&:hover': hoverStyles, // Appliquer le style au survol
+        '&:hover': hoverStyles, 
       }}
     >Backup</Button>
   );

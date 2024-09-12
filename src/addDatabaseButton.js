@@ -3,20 +3,19 @@ import IconButton from '@mui/joy/IconButton';
 import Add from '@mui/icons-material/Add';
 import React, { useState } from 'react';
 import FormNewDatabase from './FormNewDatabase';
-// import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 
-export default function AddDatabaseButton(){
-    const [openForm, setOpenForm] = useState('false'); 
+export default function AddDatabaseButton({onAdd}){
+    const [openForm, setOpenForm] = useState('false');
+    const [databases, setDatabases] = useState([]);
+ 
 
     const handleOpenForm = () => {
         setOpenForm(!openForm);
-
-
       };
 
     return(
         <div>
-            {openForm ? <FormNewDatabase /> : null}
+            {openForm ? <FormNewDatabase onAdd={onAdd} /> : null}
         </div>
     );
 }

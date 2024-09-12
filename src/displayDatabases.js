@@ -9,14 +9,13 @@ import './App.css';
 import Addbutton from './addDatabaseButton';
 import AddBackup from './addBackup';
 
-
-
-
-
-
 export default function DisplayDatabases() {
   const [databases, setDatabases] = useState([]);
   const [error, setError] = useState(null);
+
+  const handleNewDatabase = (newDatabase) => {
+    fetchDatabases();
+    };
 
   const fetchDatabases = async () => {
     try {
@@ -39,20 +38,12 @@ export default function DisplayDatabases() {
   if (error) {
     return <div>Error: {error}</div>;
   }
-    
+  
+
   return (
-    // <div>
-    //   <h2>Database List</h2>
-    //   <ul>
-    //     {databases.map((db, index) => (
-    //       <li key={index}>{db.name}</li> 
-    //     ))}
-    //   </ul>
-        
-    // </div>
 
     <List>
-          <ListItem><Addbutton/> Liste des bases de données</ListItem>
+          <ListItem><Addbutton onAdd={handleNewDatabase} /> Liste des bases de données</ListItem>
           <ListItem className="listTitle">
           <ListItemButton>
           <ListItemDecorator></ListItemDecorator>

@@ -6,10 +6,11 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import useState from 'react';
 
-export default function FormNewDatabase() {
+
+export default function FormNewDatabase({onAdd}) {
   const [open, setOpen] = React.useState(false);
-
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -17,6 +18,34 @@ export default function FormNewDatabase() {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+        const formData = new FormData(event.currentTarget);
+    const formJson = Object.fromEntries(formData.entries());
+    console.log('Form submitted:', formJson);
+
+    try {
+      const response = await fetch('http://localhost:3001/api/database', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formJson), 
+      });
+    
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Server response:', data);
+        onAdd(data); 
+        handleClose();  
+      } else {
+        console.error('Server error:', response.statusText);  
+      }
+    } catch (error) {
+      console.error('Error during form submission:', error);  
+    }
+  }
 
   return (
     <React.Fragment>
@@ -28,14 +57,7 @@ export default function FormNewDatabase() {
         onClose={handleClose}
         PaperProps={{
           component: 'form',
-          onSubmit: (event) => {
-            event.preventDefault();
-            const formData = new FormData(event.currentTarget);
-            const formJson = Object.fromEntries(formData.entries());
-            const email = formJson.email;
-            console.log(email);
-            handleClose();
-          },
+          onSubmit: handleSubmit,
         }}
       >
         <DialogTitle>Subscribe</DialogTitle>
