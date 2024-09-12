@@ -48,7 +48,7 @@ export default function DisplayBackups() {
     // </div>
 
     <List className="list">
-        <ListItem className="listItem">
+        <ListItem className="listTitle">
           <ListItemButton>
           <ListItemDecorator></ListItemDecorator>
           <ListItemContent className="listItemContent">Nom de la BDD</ListItemContent>

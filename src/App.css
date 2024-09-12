@@ -50,9 +50,11 @@
 }
 
 .listItemContent {
-  flex: 1; /* Les éléments prennent chacun une portion égale de l'espace */
-  width: 15%; /* Spécifie que chaque ListItemContent prend 1/4 de la largeur */
-  text-align: center; /* Centrer le texte */
+  flex: 1; 
+  width: 15%; 
+  text-align: center; 
+  justify-content: center;
+  align-items: center;
 }
 
 .listItemContentPath{

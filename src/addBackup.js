@@ -4,13 +4,13 @@ import Add from '@mui/icons-material/Add';
 
 export default function AddBackup() {
   const buttonStyles = {
-    backgroundColor: '#1976d2',
-    color: 'white',
-    padding: '10px 20px',
-    borderRadius: '5px',
-    fontSize: '16px',
-    display: 'flex',
-    alignItems: 'center',
+    // backgroundColor: '#1976d2',
+    color: 'black',
+    // padding: '10px 20px',
+    // borderRadius: '5px',
+    // fontSize: '16px',
+    // display: 'flex',
+    // alignItems: 'center',
     cursor: 'pointer',
   };
 
@@ -21,6 +21,7 @@ export default function AddBackup() {
   return (
     <Button
       className="btnBk"
+      variant="outlined"
       startDecorator={<Add />}
       sx={{
         ...buttonStyles,

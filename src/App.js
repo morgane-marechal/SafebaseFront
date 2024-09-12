@@ -4,18 +4,26 @@ import MenuApp from './Menu';
 import DisplayDatabases from './displayDatabases';
 import Addbutton from './addDatabaseButton';
 import DisplayBackups from './displayBackups';
+import React, { useState } from 'react';
 
 function App() {
+  const [selectedMenu, setSelectedMenu] = useState('databases'); 
+  const handleMenuSelection = (selection) => {
+    setSelectedMenu(selection);
+    console.log(selectedMenu)
+  };
   return (
     <div className="App">
       <header className="App-header">
-      <MenuApp className="menuApp"></MenuApp>
+      <MenuApp className="menuApp" onMenuSelect={handleMenuSelection}></MenuApp>
       </header>
       <body>
-        <DisplayDatabases>
+        {selectedMenu === 'databases' && <DisplayDatabases />}
+        {selectedMenu === 'backups' && <DisplayBackups />}
+        {/* <DisplayDatabases>
         </DisplayDatabases>
         <DisplayBackups>
-        </DisplayBackups>
+        </DisplayBackups> */}
       </body>
     </div>
   );
