@@ -43,7 +43,8 @@ export default function DisplayDatabases() {
   return (
 
     <List>
-          <ListItem><Addbutton onAdd={handleNewDatabase} /> Liste des bases de données</ListItem>
+          <ListItem> Liste des bases de données</ListItem>
+          <ListItem><Addbutton onAdd={handleNewDatabase} /></ListItem>
           <ListItem className="listTitle">
           <ListItemButton>
           <ListItemDecorator></ListItemDecorator>
@@ -64,11 +65,11 @@ export default function DisplayDatabases() {
           <ListItemDecorator></ListItemDecorator>
           <ListItemContent className="listItemContent">{db.user}</ListItemContent>
           <ListItemContent className="listItemContent">{db.name}</ListItemContent>
-          <ListItemContent className="listItemContent">{db.hoste}</ListItemContent>
+          <ListItemContent className="listItemContent">{db.host}</ListItemContent>
           <ListItemContent className="listItemContent">{db.port}</ListItemContent>
           <ListItemContent className="listItemContent">{db.type}</ListItemContent>
           <ListItemContent className="listItemContent">{db.container_name}</ListItemContent>
-          <ListItemContent className="listItemContent"><AddBackup></AddBackup></ListItemContent>
+          <ListItemContent className="listItemContent"><AddBackup databaseId={db.id}></AddBackup></ListItemContent>
           </ListItemButton>
           <ListDivider/>
         </ListItem>

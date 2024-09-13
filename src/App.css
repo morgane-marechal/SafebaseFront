@@ -55,11 +55,19 @@
   text-align: center; 
   justify-content: center;
   align-items: center;
+  padding:10px;
 }
 
 .listItemContentPath{
   flex:1;
   width:55%;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size:medium;
+}
+
+.title{
   text-align: center;
 }
 

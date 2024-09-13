@@ -60,7 +60,7 @@ export default function FormNewDatabase({onAdd}) {
           onSubmit: handleSubmit,
         }}
       >
-        <DialogTitle>Subscribe</DialogTitle>
+        <DialogTitle>Nouvelle base de données</DialogTitle>
         <DialogContent>
           <DialogContentText>
             Ajoutez les informations de connexion à une base de données existente.
