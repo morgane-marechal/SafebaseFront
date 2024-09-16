@@ -55,7 +55,6 @@ export default function DisplayDatabases() {
           <ListItemContent className="listItemContent">Type</ListItemContent>
           <ListItemContent className="listItemContent">Container</ListItemContent>
           <ListItemContent className="listItemContent">Nouvelle sauvegarde</ListItemContent>
-
           </ListItemButton>
           <ListDivider/>
         </ListItem>
