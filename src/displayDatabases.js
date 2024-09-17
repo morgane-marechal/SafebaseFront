@@ -8,6 +8,7 @@ import ListItemButton from '@mui/joy/ListItemButton';
 import './App.css';
 import Addbutton from './addDatabaseButton';
 import AddBackup from './addBackup';
+import Typography from '@mui/material/Typography';
 
 export default function DisplayDatabases() {
   const [databases, setDatabases] = useState([]);
@@ -43,7 +44,7 @@ export default function DisplayDatabases() {
   return (
 
     <List>
-          <ListItem> Liste des bases de données</ListItem>
+          <ListItem> <Typography variant="h4" >Liste des bases de données</Typography></ListItem>
           <ListItem><Addbutton onAdd={handleNewDatabase} /></ListItem>
           <ListItem className="listTitle">
           <ListItemButton>

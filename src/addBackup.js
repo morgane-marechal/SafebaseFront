@@ -4,7 +4,7 @@ import Add from '@mui/icons-material/Add';
 import ToastSuccess from './toastBackupSuccess';
 
 export default function AddBackup({ databaseId }) {
-  const [showToast, setShowToast] = useState(false); // État pour afficher le toast
+  const [showToast, setShowToast] = useState(false); 
 
   const postDatabaseInfo = async (databaseInfo) => {
     try {
@@ -12,7 +12,7 @@ export default function AddBackup({ databaseId }) {
       if (response.ok) {
         const data = await response.json();
         console.log('Server response:', data);
-        setShowToast(true); // Affiche le toast après succès
+        setShowToast(true); 
       } else {
         console.error('Server error:', response.statusText);  
       }
