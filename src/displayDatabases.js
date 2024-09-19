@@ -9,8 +9,10 @@ import './App.css';
 import Addbutton from './addDatabaseButton';
 import AddBackup from './addBackup';
 import Typography from '@mui/material/Typography';
+import FormSaveAuto from './autoSaving'
 
-export default function DisplayDatabases() {
+
+export default function DisplayDatabases(fetchBackups) {
   const [databases, setDatabases] = useState([]);
   const [error, setError] = useState(null);
 
@@ -56,6 +58,7 @@ export default function DisplayDatabases() {
           <ListItemContent className="listItemContent">Type</ListItemContent>
           <ListItemContent className="listItemContent">Container</ListItemContent>
           <ListItemContent className="listItemContent">Nouvelle sauvegarde</ListItemContent>
+          <ListItemContent className="listItemContent">Sauvegarde automatique</ListItemContent>
           </ListItemButton>
           <ListDivider/>
         </ListItem>
@@ -70,6 +73,7 @@ export default function DisplayDatabases() {
           <ListItemContent className="listItemContent">{db.type}</ListItemContent>
           <ListItemContent className="listItemContent">{db.container_name}</ListItemContent>
           <ListItemContent className="listItemContent"><AddBackup databaseId={db.id}></AddBackup></ListItemContent>
+          <ListItemContent className="listItemContent"><FormSaveAuto databaseId={db.id} refresh={fetchBackups}></FormSaveAuto></ListItemContent>
           </ListItemButton>
           <ListDivider/>
         </ListItem>

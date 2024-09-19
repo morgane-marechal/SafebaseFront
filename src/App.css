@@ -78,6 +78,22 @@
   text-align: center;
 }
 
+.formRadio{
+  display:flex !important;
+  flex-direction: column !important;
+}
+
+.pagination{
+  margin:0 10px 0 10px;
+  border-radius: 50px;
+  border: 1px solid rgb(67, 87, 199);
+  background-color: rgb(242, 249, 255);
+}
+.pagination:hover{
+  border: 1px solid rgb(67, 87, 199);
+  background-color: rgb(222, 234, 245);
+}
+
 
 
 @keyframes App-logo-spin {
