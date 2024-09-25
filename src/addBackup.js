@@ -5,6 +5,7 @@ import ToastSuccess from './toastBackupSuccess';
 
 export default function AddBackup({ databaseId }) {
   const [showToast, setShowToast] = useState(false); 
+  const [message,setMessage] = useState("Backup réussi!");
 
   const postDatabaseInfo = async (databaseInfo) => {
     try {
@@ -14,10 +15,15 @@ export default function AddBackup({ databaseId }) {
         console.log('Server response:', data);
         setShowToast(true); 
       } else {
-        console.error('Server error:', response.statusText);  
+        console.error('Server error:', response.statusText);
+        setMessage=response.statusText;
+        setShowToast(true); 
+
       }
     } catch (error) {
       console.error('Error during form submission:', error);  
+      setMessage=error;
+      setShowToast(true); 
     }
   };
 
@@ -35,7 +41,7 @@ export default function AddBackup({ databaseId }) {
         Backup
       </Button>
 
-      <ToastSuccess open={showToast} handleClose={() => setShowToast(false)} />
+      <ToastSuccess open={showToast} handleClose={() => setShowToast(false)} message={message}/>
     </React.Fragment>
   );
 }

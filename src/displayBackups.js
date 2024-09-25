@@ -50,7 +50,7 @@ export default function DisplayBackups({ refresh, backups }) {
         <ListItem className="listTitle">
           <ListItemButton>
             <ListItemDecorator></ListItemDecorator>
-            <ListItemContent className="listItemContent">Id</ListItemContent>
+            {/* <ListItemContent className="listItemContent">Id</ListItemContent> */}
             <ListItemContent className="listItemContent">Nom de la BDD</ListItemContent>
             <ListItemContent className="listItemContent">Type</ListItemContent>
             <ListItemContent className="listItemContentPath">Path</ListItemContent>
@@ -64,7 +64,7 @@ export default function DisplayBackups({ refresh, backups }) {
           <ListItem key={bck.id} className="listItem">
             <ListItemButton>
               <ListItemDecorator></ListItemDecorator>
-              <ListItemContent className="listItemContent">{bck.id}</ListItemContent>
+              {/* <ListItemContent className="listItemContent">{bck.id}</ListItemContent> */}
               <ListItemContent className="listItemContent">{bck.database_name}</ListItemContent>
               <ListItemContent className="listItemContent">{bck.type}</ListItemContent>
               <ListItemContent className="listItemContentPath">{bck.path}</ListItemContent>
